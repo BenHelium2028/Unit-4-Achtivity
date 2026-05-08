@@ -11,6 +11,7 @@ const body = document.querySelector("body");
 const heading = document.querySelector("#main-heading");
 const description = document.querySelector("#description");
 const toggleBtn = document.querySelector("#toggle");
+const picture = document.querySelector("img");
 
 // rainbow colors
 const colors = [
@@ -69,6 +70,8 @@ function toggleMode() {
         toggleBtn.style.padding = "8px 16px";
         toggleBtn.style.cursor = "pointer";
 
+        picture.src = "Screenshot 2026-05-08 121817.png";
+
         //bug fixing:
         console.log("Wacky Mode Set:");
         console.log(wackyMode);
@@ -85,6 +88,9 @@ function toggleMode() {
         toggleBtn.style.borderRadius = "12px";
         toggleBtn.style.padding = "8px 16px";
         toggleBtn.style.cursor = "pointer";
+        toggleBtn.textContent = "Get Un-Wacky"
+
+        picture.src = "Screenshot 2026-05-08 123333.png";
 
         // REMOVE smooth transition
         body.style.transition = "none";
