@@ -1,5 +1,6 @@
 //boolean for wacky mode
 let wackyMode = false;
+let surpriseMode = false;
 
 /*
 NEW JS FUNTION:
@@ -12,6 +13,7 @@ const heading = document.querySelector("#main-heading");
 const description = document.querySelector("#description");
 const toggleBtn = document.querySelector("#toggle");
 const picture = document.querySelector("img");
+
 
 // rainbow colors
 const colors = [
@@ -68,7 +70,7 @@ function toggleMode() {
         toggleBtn.style.border = "1px solid white";
         toggleBtn.style.borderRadius = "12px";
         toggleBtn.style.padding = "8px 16px";
-        toggleBtn.style.cursor = "pointer";
+        toggleBtn.style.cursor = "pointer";toggleBtn.textContent = "Get Wacky"
 
         picture.src = "Screenshot 2026-05-08 121817.png";
 
@@ -109,3 +111,39 @@ function toggleMode() {
 
 //atach funtion to button
 toggleBtn.addEventListener("click", toggleMode);
+
+
+//define element
+const supriseButton = document.querySelector("#surprise");
+
+//atach a function to the button
+supriseButton.addEventListener("click", triggerSuprise);
+
+//button setuo
+supriseButton.style.color = "white";
+supriseButton.style.backgroundColor = "#212529";
+supriseButton.style.border = "1px solid white";
+supriseButton.style.borderRadius = "12px";
+supriseButton.style.padding = "8px 16px";
+supriseButton.style.cursor = "pointer";
+
+
+
+//what actually happnes
+function triggerSuprise() {
+    surpriseMode = !surpriseMode;
+
+    if (surpriseMode == false && wackyMode == false) {
+        picture.src = "Screenshot 2026-05-08 121817.png";
+        supriseButton.textContent = "Surprise Mode";
+    } 
+    else if (!surpriseMode && wackyMode) {
+        picture.src = "Screenshot 2026-05-08 123333.png";
+        supriseButton.textContent = "Surprise Mode";
+    }
+    else {
+        picture.src = "d7NmRG.gif";
+        supriseButton.textContent = "Un-Surprise Mode";
+    }
+
+}
