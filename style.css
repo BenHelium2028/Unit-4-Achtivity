@@ -1,1 +1,23 @@
+#emoji {
+    font-size: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
 
+.animated {
+    opacity: 1 !important;
+    animation-name: jig;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes jig {
+    0% {transform: translate(0px, 0px) rotate(0deg);}
+    25% {transform: translate(200px, 200px) rotate(90deg);}
+    50% {transform: translate(67px, 67px) transform: rotate(180deg);}
+    75% {transform: translate(300px, 300px) rotate(270deg);}
+    100% {transform: translate(0px, 0px) rotate(360deg);}
+}
